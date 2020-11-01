@@ -1,0 +1,24 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2019",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2019", "dom"],
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@cooking-recipe/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+    },
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "exclude": ["node_modules", "tmp"]
+}

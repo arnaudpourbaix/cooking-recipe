@@ -172,6 +172,91 @@
           }
         }
       }
+    },
+    "nest-auth": {
+      "root": "libs/nest-auth",
+      "sourceRoot": "libs/nest-auth/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/nest-auth/tsconfig.lib.json",
+              "libs/nest-auth/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/nest-auth/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/nest-auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ng-auth": {
+      "projectType": "library",
+      "root": "libs/ng-auth",
+      "sourceRoot": "libs/ng-auth/src",
+      "prefix": "cooking-recipe",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ng-auth/tsconfig.lib.json",
+              "libs/ng-auth/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ng-auth/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ng-auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "common-auth": {
+      "projectType": "library",
+      "root": "libs/common-auth",
+      "sourceRoot": "libs/common-auth/src",
+      "prefix": "cooking-recipe",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/common-auth/tsconfig.lib.json",
+              "libs/common-auth/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/common-auth/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/common-auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

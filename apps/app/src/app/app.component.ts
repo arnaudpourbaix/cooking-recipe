@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { AuthActions, AuthState } from '@authentication/ng-auth';
+import { Select, Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'cooking-recipe-root',
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(private http: HttpClient) {}
+  @Select(AuthState.isAuthenticated)
+  isAuthenticated$: Observable<boolean> | undefined;
+
+  constructor(private readonly store: Store) {}
+
+  logout() {
+    this.store.dispatch(new AuthActions.Logout());
+  }
 }

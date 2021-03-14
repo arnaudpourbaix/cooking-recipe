@@ -3,5 +3,8 @@ module.exports = {
     '<rootDir>/apps/app',
     '<rootDir>/apps/api',
     '<rootDir>/libs/api-interfaces',
+    '<rootDir>/libs/nest-auth',
+    '<rootDir>/libs/ng-auth',
+    '<rootDir>/libs/common-auth',
   ],
 };

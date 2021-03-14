@@ -1,7 +1,10 @@
-<div style="text-align: center;">
-  <h1>Welcome to app!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-  />
+<div class="root">
+  <button mat-button [routerLink]="['/']">Home</button>
+  <button mat-button [routerLink]="['/profile']">Profile</button>
+  <div class="user">
+    <!-- <apx-auth-user></apx-auth-user> -->
+  </div>
+</div>
+<div class="content">
+  <router-outlet></router-outlet>
 </div>

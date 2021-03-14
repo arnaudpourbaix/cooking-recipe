@@ -31,6 +31,15 @@
     },
     "api-interfaces": {
       "tags": []
+    },
+    "nest-auth": {
+      "tags": []
+    },
+    "ng-auth": {
+      "tags": []
+    },
+    "common-auth": {
+      "tags": []
     }
   }
 }

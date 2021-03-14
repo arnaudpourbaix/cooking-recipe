@@ -1,28 +1,33 @@
+import { NestAuthModule, VALIDATION_SCHEMA } from '@authentication/nest-auth';
 import { HttpModule, Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigType } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AuthModule } from './auth/auth.module';
-import configuration from './config/configuration';
+import authConfig from './config/auth.config';
 import { databaseConnection } from './database/database.config';
 import { IngredientModule } from './ingredient/ingredient.module';
 import { RecipeModule } from './recipe/recipe.module';
-import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
     HttpModule,
-    AuthModule,
     RecipeModule,
-    UserModule,
     IngredientModule,
-    ConfigModule.forRoot({
-      envFilePath: 'config.env',
-      load: [configuration],
-      isGlobal: true,
-    }),
     TypeOrmModule.forRoot({
       autoLoadEntities: true,
       ...databaseConnection,
+    }),
+    ConfigModule.forRoot({
+      validationSchema: VALIDATION_SCHEMA,
+      envFilePath: 'config-auth.env',
+      load: [authConfig],
+      isGlobal: true,
+    }),
+    NestAuthModule.registerAsync({
+      inject: [authConfig.KEY],
+      useFactory: async (config: ConfigType<typeof authConfig>) => ({
+        google: config.google,
+        jwt: config.jwt,
+      }),
     }),
   ],
 })

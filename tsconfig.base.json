@@ -4,11 +4,9 @@
         "rootDir": ".",
         "sourceMap": true,
         "moduleResolution": "node",
-        "esModuleInterop": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "importHelpers": true,
-        "target": "es2020",
+        "target": "es2019",
         "module": "esnext",
         "typeRoots": [
             "node_modules/@types"
@@ -18,7 +16,6 @@
             "dom"
         ],
         "skipLibCheck": true,
-        "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
             "@cooking-recipe/api-interfaces": [
@@ -34,8 +31,6 @@
                 "libs/common-auth/src/index.ts"
             ]
         },
-        "resolveJsonModule": true,
-        "strict": true,
         "forceConsistentCasingInFileNames": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true

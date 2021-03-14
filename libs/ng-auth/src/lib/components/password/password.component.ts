@@ -31,7 +31,7 @@ import { MustMatchValidator } from '../../validators/must-match.validator';
 export class PasswordComponent implements OnInit, OnDestroy, AfterViewInit {
   private destroy$ = new Subject<void>();
 
-  passwordMinlength = 3;
+  passwordMinlength = 8;
 
   @Select(AuthState.errorResponse)
   error$:

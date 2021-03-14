@@ -24,12 +24,12 @@ const uiModules = [MatButtonModule];
       selectorOptions: { suppressErrors: false },
     }),
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    // AuthModule.forRoot({
-    //   serverUrl: environment.serverUrl,
-    // }),
+    AuthModule.forRoot({
+      serverUrl: environment.serverUrl,
+    }),
     uiModules,
   ],
-  //   providers: [...authProviders],
+  providers: [...authProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

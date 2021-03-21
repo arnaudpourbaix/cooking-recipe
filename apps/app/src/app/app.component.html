@@ -1,6 +1,11 @@
 <div class="root">
-  <button mat-button [routerLink]="['/']">Home</button>
-  <button mat-button [routerLink]="['/profile']">Profile</button>
+  <button mat-button [routerLink]="['/']">Rechercher</button>
+  <button mat-button [routerLink]="['/recipe']">
+    Recettes
+  </button>
+  <button mat-button [routerLink]="['/recipe/create']">
+    Créer une recette
+  </button>
   <div class="user">
     <apx-auth-user></apx-auth-user>
   </div>

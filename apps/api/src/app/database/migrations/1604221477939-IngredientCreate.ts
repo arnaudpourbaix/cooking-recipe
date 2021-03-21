@@ -8,7 +8,7 @@ export class IngredientCreate1604221477939 implements MigrationInterface {
         columns: [
           {
             name: 'ID',
-            type: 'text',
+            type: 'number',
             isPrimary: true,
           },
           {

@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthActions, AuthState } from '@authentication/ng-auth';
-import { Select, Store } from '@ngxs/store';
-import { Observable } from 'rxjs';
+import { Store } from '@ngxs/store';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +7,5 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  @Select(AuthState.isAuthenticated)
-  isAuthenticated$: Observable<boolean> | undefined;
-
   constructor(private readonly store: Store) {}
-
-  logout() {
-    this.store.dispatch(new AuthActions.Logout());
-  }
 }

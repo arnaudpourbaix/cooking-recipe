@@ -4,12 +4,13 @@ export class UserCreate1603223280391 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'USER',
+        name: 'user',
         columns: [
           {
             name: 'id',
             type: 'uuid',
             isPrimary: true,
+            isGenerated: true,
           },
           {
             name: 'email',

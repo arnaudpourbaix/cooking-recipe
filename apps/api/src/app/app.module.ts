@@ -10,6 +10,7 @@ import { databaseConnection } from './database/database.config';
 import { Ingredient } from './database/entities/ingredient.entity';
 import { RecipeIngredient } from './database/entities/recipe-ingredient.entity';
 import { Recipe } from './database/entities/recipe.entity';
+import { TypeIngredient } from './database/entities/type-ingredient.entity';
 import { Unit } from './database/entities/unit.entity';
 import { IngredientService } from './services/ingredient.service';
 import { RecipeService } from './services/recipe.service';
@@ -17,7 +18,13 @@ import { UnitService } from './services/unit.service';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Recipe, Ingredient, Unit, RecipeIngredient]),
+    TypeOrmModule.forFeature([
+      Ingredient,
+      Recipe,
+      RecipeIngredient,
+      TypeIngredient,
+      Unit,
+    ]),
     HttpModule,
     TypeOrmModule.forRoot({
       autoLoadEntities: true,

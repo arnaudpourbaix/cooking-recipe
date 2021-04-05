@@ -1,4 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { TypeIngredient } from './type-ingredient.entity';
 
 @Entity()
 export class Ingredient {
@@ -7,4 +14,8 @@ export class Ingredient {
 
   @Column({ nullable: false })
   label!: string;
+
+  @ManyToOne(() => TypeIngredient)
+  @JoinColumn({ name: 'type_id' })
+  type?: TypeIngredient;
 }

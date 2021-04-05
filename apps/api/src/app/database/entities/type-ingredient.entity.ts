@@ -1,13 +1,10 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity()
-export class Unit {
+@Entity({ name: 'type-ingredient' })
+export class TypeIngredient {
   @PrimaryGeneratedColumn()
   id!: number;
 
   @Column({ nullable: false })
   label!: string;
-
-  @Column({ nullable: true })
-  notation!: string;
 }

@@ -1,16 +1,15 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class TypeIngredient1617615336758 implements MigrationInterface {
+export class SeasonCreate1619938222520 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'type-ingredient',
+        name: 'season',
         columns: [
           {
             name: 'id',
-            type: 'integer',
+            type: 'sring',
             isPrimary: true,
-            isGenerated: true,
           },
           {
             name: 'label',

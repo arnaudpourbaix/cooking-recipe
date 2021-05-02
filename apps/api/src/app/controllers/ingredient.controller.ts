@@ -1,18 +1,15 @@
-import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  Patch,
-  Post,
-  Query,
-} from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
+import { Ingredient } from '../database/entities/ingredient.entity';
 import { IngredientService } from '../services/ingredient.service';
 
 @Controller('ingredients')
 export class IngredientController {
   constructor(private readonly ingredientService: IngredientService) {}
+
+  @Get()
+  find(): Promise<Ingredient[]> {
+    return this.ingredientService.find();
+  }
 
   //   @Get()
   //   findAll(@Query() paginationQuery: PaginationQueryDto) {

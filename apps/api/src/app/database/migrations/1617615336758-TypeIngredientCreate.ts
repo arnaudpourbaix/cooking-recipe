@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class IngredientCreate1617615489249 implements MigrationInterface {
+export class TypeIngredientCreate1617615336758 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'ingredient',
+        name: 'type_ingredient',
         columns: [
           {
             name: 'id',
@@ -16,18 +16,6 @@ export class IngredientCreate1617615489249 implements MigrationInterface {
             name: 'label',
             type: 'text',
             isNullable: false,
-          },
-          {
-            name: 'type_id',
-            type: 'integer',
-            isNullable: true,
-          },
-        ],
-        foreignKeys: [
-          {
-            columnNames: ['type_id'],
-            referencedTableName: 'type_ingredient',
-            referencedColumnNames: ['id'],
           },
         ],
       })

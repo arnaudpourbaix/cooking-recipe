@@ -10,6 +10,7 @@ import { databaseConnection } from './database/database.config';
 import { Ingredient } from './database/entities/ingredient.entity';
 import { RecipeIngredient } from './database/entities/recipe-ingredient.entity';
 import { Recipe } from './database/entities/recipe.entity';
+import { Season } from './database/entities/season.entity';
 import { TypeIngredient } from './database/entities/type-ingredient.entity';
 import { Unit } from './database/entities/unit.entity';
 import { IngredientService } from './services/ingredient.service';
@@ -19,11 +20,12 @@ import { UnitService } from './services/unit.service';
 @Module({
   imports: [
     TypeOrmModule.forFeature([
-      Ingredient,
+      Unit,
       Recipe,
+      Season,
+      Ingredient,
       RecipeIngredient,
       TypeIngredient,
-      Unit,
     ]),
     HttpModule,
     TypeOrmModule.forRoot({
@@ -44,7 +46,7 @@ import { UnitService } from './services/unit.service';
       }),
     }),
   ],
-  //   controllers: [RecipeController, IngredientController, UnitController],
-  //   providers: [RecipeService, IngredientService, UnitService],
+  controllers: [RecipeController, IngredientController, UnitController],
+  providers: [IngredientService, RecipeService, UnitService],
 })
 export class AppModule {}

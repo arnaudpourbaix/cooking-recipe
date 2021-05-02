@@ -1,32 +1,31 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class IngredientCreate1617615489249 implements MigrationInterface {
+export class SeasonIngredientCreate1619938240065 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'ingredient',
+        name: 'season_ingredient',
         columns: [
           {
-            name: 'id',
+            name: 'season_id',
+            type: 'string',
+            isPrimary: true,
+          },
+          {
+            name: 'ingredient_id',
             type: 'integer',
             isPrimary: true,
-            isGenerated: true,
-          },
-          {
-            name: 'label',
-            type: 'text',
-            isNullable: false,
-          },
-          {
-            name: 'type_id',
-            type: 'integer',
-            isNullable: true,
           },
         ],
         foreignKeys: [
           {
-            columnNames: ['type_id'],
-            referencedTableName: 'type_ingredient',
+            columnNames: ['season_id'],
+            referencedTableName: 'season',
+            referencedColumnNames: ['id'],
+          },
+          {
+            columnNames: ['ingredient_id'],
+            referencedTableName: 'ingredient',
             referencedColumnNames: ['id'],
           },
         ],

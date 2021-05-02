@@ -10,6 +10,7 @@ export class TypeIngredientInserts1617616609211 implements MigrationInterface {
     await repository.save(repository.create({ id: 4, label: 'Céréale' }));
     await repository.save(repository.create({ id: 5, label: 'Oléagineux' }));
     await repository.save(repository.create({ id: 6, label: 'Epice' }));
+    await repository.save(repository.create({ id: 7, label: 'Fruit sec' }));
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {}

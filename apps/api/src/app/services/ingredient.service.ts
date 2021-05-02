@@ -9,4 +9,8 @@ export class IngredientService {
     @InjectRepository(Ingredient)
     private readonly repository: Repository<Ingredient>
   ) {}
+
+  find(): Promise<Ingredient[]> {
+    return this.repository.find({ relations: ['type', 'seasons'] });
+  }
 }

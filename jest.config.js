@@ -6,5 +6,7 @@ module.exports = {
     '<rootDir>/libs/nest-auth',
     '<rootDir>/libs/ng-auth',
     '<rootDir>/libs/common-auth',
+    '<rootDir>/libs/ng-common',
+    '<rootDir>/libs/utils',
   ],
 };

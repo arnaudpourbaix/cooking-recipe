@@ -40,6 +40,12 @@
     },
     "common-auth": {
       "tags": []
+    },
+    "ng-common": {
+      "tags": []
+    },
+    "utils": {
+      "tags": []
     }
   }
 }

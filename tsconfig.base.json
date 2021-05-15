@@ -1,43 +1,29 @@
 {
-    "compileOnSave": false,
-    "compilerOptions": {
-        "rootDir": ".",
-        "sourceMap": true,
-        "moduleResolution": "node",
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "target": "es2019",
-        "module": "esnext",
-        "typeRoots": [
-            "node_modules/@types"
-        ],
-        "lib": [
-            "es2020",
-            "dom"
-        ],
-        "skipLibCheck": true,
-        "baseUrl": ".",
-        "paths": {
-            "@cooking-recipe/api-interfaces": [
-                "libs/api-interfaces/src/index.ts"
-            ],
-            "@authentication/nest-auth": [
-                "libs/nest-auth/src/index.ts"
-            ],
-            "@authentication/ng-auth": [
-                "libs/ng-auth/src/index.ts"
-            ],
-            "@authentication/common-auth": [
-                "libs/common-auth/src/index.ts"
-            ]
-        },
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "noImplicitReturns": true,
-        "noFallthroughCasesInSwitch": true
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2019",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@cooking-recipe/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@authentication/nest-auth": ["libs/nest-auth/src/index.ts"],
+      "@authentication/ng-auth": ["libs/ng-auth/src/index.ts"],
+      "@authentication/common-auth": ["libs/common-auth/src/index.ts"],
+      "@cooking-recipe/ng-common": ["libs/ng-common/src/index.ts"],
+      "@cooking-recipe/utils": ["libs/utils/src/index.ts"]
     },
-    "exclude": [
-        "node_modules",
-        "tmp"
-    ]
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "exclude": ["node_modules", "tmp"]
 }

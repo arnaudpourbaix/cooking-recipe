@@ -1,0 +1,23 @@
+.even-row {
+  background-color: honeydew;
+}
+
+tr.table-row:not(.expanded-row):hover {
+  background: whitesmoke;
+  cursor: pointer;
+}
+
+.cdk-column-label {
+  width: 400px;
+  max-width: 400px;
+}
+
+.cdk-column-type {
+  width: 200px;
+  max-width: 200px;
+}
+
+.cdk-column-season {
+  width: 200px;
+  max-width: 200px;
+}

@@ -1,14 +1,27 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { Ingredient } from '../database/entities/ingredient.entity';
 import { IngredientService } from '../services/ingredient.service';
+import { IngredientFindParams } from '@cooking-recipe/api-interfaces';
+import { TypeIngredient } from '../database/entities/type-ingredient.entity';
+import { Season } from '../database/entities/season.entity';
 
-@Controller('ingredients')
+@Controller('')
 export class IngredientController {
   constructor(private readonly ingredientService: IngredientService) {}
 
-  @Get()
-  find(): Promise<Ingredient[]> {
-    return this.ingredientService.find();
+  @Get('ingredients')
+  find(@Query() params: IngredientFindParams): Promise<Ingredient[]> {
+    return this.ingredientService.find(params);
+  }
+
+  @Get('typesIngredients')
+  getTypes(): Promise<TypeIngredient[]> {
+    return this.ingredientService.getTypes();
+  }
+
+  @Get('seasons')
+  getSeasons(): Promise<Season[]> {
+    return this.ingredientService.getSeasons();
   }
 
   //   @Get()

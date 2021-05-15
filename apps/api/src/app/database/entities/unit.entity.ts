@@ -8,6 +8,6 @@ export class Unit {
   @Column({ nullable: false })
   label!: string;
 
-  @Column({ nullable: true })
-  notation!: string;
+  @Column({ nullable: true, type: 'text' })
+  notation: string | undefined | null;
 }
